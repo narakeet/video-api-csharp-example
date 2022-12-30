@@ -5,7 +5,7 @@ namespace NarakeetExample
 	public class Program
 	{    
 
-		public static string sourceFileInZip = "source.txt";
+		public static string mainSourceFile = "source.txt";
 		public static string videoDirectory = "video";
 
 		static async Task Main()
@@ -23,7 +23,7 @@ namespace NarakeetExample
 			File.Delete(videoZip);
 
 			// request a build task and wait until it completes
-			BuildTask buildTask = await api.RequestBuildTaskAsync(uploadToken, sourceFileInZip);
+			BuildTask buildTask = await api.RequestBuildTaskAsync(uploadToken, mainSourceFile);
 			var taskResult = await api.PollUntilFinishedAsync(
 					buildTask, 
 					// do something smarter here with progress

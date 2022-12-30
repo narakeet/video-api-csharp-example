@@ -9,7 +9,8 @@ using System.IO.Compression;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace NarakeetExample {
+namespace NarakeetExample 
+{
 	public class UploadToken
 	{
 		public string? Url { get; set; }
@@ -123,7 +124,7 @@ namespace NarakeetExample {
 
 				string tempPath = Path.GetTempPath();
 				string tempFileName = Path.Combine(tempPath, Guid.NewGuid().ToString() + ".mp4");
-				
+
 				using (var fileStream = File.Create(tempFileName))
 				{
 					await response.Content.CopyToAsync(fileStream);
